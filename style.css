@@ -1,0 +1,74 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    background: rgba(118, 177, 118, 0.864);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-container {
+    width: 400px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.5);
+    display: grid;
+    gap: 3px;
+    padding: 10px;
+}
+
+button {
+    font-weight: bolder;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    border: none;
+    background-color: rgb(255, 245, 245);
+    transition:  0.2S ease-in-out;
+}
+
+button:hover {
+    background: rgb(60, 139, 60);
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: black;
+    color: white;
+    width: 100%;
+    min-height: 30px;
+    grid-column-start: span 4;
+    margin-bottom: 7px;
+    padding: 0 15px;
+}
+
+.total {
+    height: 60%;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+.current-operation {
+    height: 40%;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-clear, .btn-0 {
+    grid-column-start: span 2;
+}
