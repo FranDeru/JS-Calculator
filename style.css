@@ -25,6 +25,7 @@ body {
     display: grid;
     gap: 3px;
     padding: 10px;
+    border-radius: 10px;
 }
 
 button {
@@ -34,6 +35,10 @@ button {
     border: none;
     background-color: rgb(255, 245, 245);
     transition:  0.2S ease-in-out;
+}
+
+.btn-operation {
+    background: rgb(113, 169, 113);
 }
 
 button:hover {
@@ -51,6 +56,7 @@ button:hover {
     grid-column-start: span 4;
     margin-bottom: 7px;
     padding: 0 15px;
+    border-radius: 5px;
 }
 
 .total {
@@ -69,6 +75,6 @@ button:hover {
     flex-wrap: wrap;
 }
 
-.btn-clear, .btn-0 {
+.btn-clear, .zero {
     grid-column-start: span 2;
 }
