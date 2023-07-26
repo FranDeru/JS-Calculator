@@ -19,11 +19,18 @@ function clear() {
     num1 = "";
     num2 = "";
     operator = null;
+    numMem = "";
+    previousOuput.textContent = "";
+    currentOutput.textContent = "";
 }
 
 function pourcent(num1) {
     let a = Number(num1);
-    return a / 100;
+    currentOutput.textContent = a / 100;
+}
+
+function appendComma() {
+    currentOutput.textContent += ".";
 }
 
 function operate(operator, num1, num2) {
@@ -39,6 +46,11 @@ function operate(operator, num1, num2) {
             currentOutput.textContent = a - b;
             break;
         case "/":
+            if(b === 0) {
+                previousOuput.textContent = "";
+                currentOutput. textContent = "";
+                break;
+            }
             previousOuput.textContent = a / b;
             currentOutput.textContent = a / b;
             break;
@@ -63,3 +75,7 @@ function setOperator(sign) {
 numberBtn.forEach(button => button.addEventListener('click', () => appendNumber(button.textContent)));
 operationBtn.forEach(button => button.addEventListener('click', () => setOperator(button.textContent)));
 btnEgal.addEventListener('click', () => operate(operator, numMem, currentOutput.textContent));
+btnClear.addEventListener('click', () => clear());
+btnPourcent.addEventListener('click', () => pourcent(currentOutput.textContent));
+btnComma.addEventListener('click', () => appendComma());
+
